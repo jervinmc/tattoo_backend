@@ -47,7 +47,9 @@ INSTALLED_APPS = [
     'users',
     'drf_yasg',
     'rest_framework',
-    'tattoo'
+    'tattoo',
+    'category',
+    'transaction'
 ]
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
