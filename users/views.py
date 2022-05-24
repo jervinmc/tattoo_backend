@@ -27,3 +27,16 @@ class Login(generics.GenericAPIView):
         except Exception as e:
             print(e)
             return Response(status=status.HTTP_404_NOT_FOUND,data=[])
+
+
+class Artist(generics.GenericAPIView):
+    def get(self,request,format=None):
+        try:
+            items = User.objects.filter(account_type='Artist')
+            items = UserSerializer(items,many=True)
+
+            return Response(status=status.HTTP_200_OK,data=items.data)
+        except Exception as e:
+            print(e)
+            return Response(status=status.HTTP_404_NOT_FOUND,data=[])
+

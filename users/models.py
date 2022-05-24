@@ -19,5 +19,6 @@ class User(models.Model):
     lastname=models.CharField(_('lastname'),max_length=255,blank=True,null=True)
     account_type=models.CharField(_('account_type'),max_length=255,blank=True,null=True)
     password=models.CharField(_('password'),max_length=255,blank=True,null=True)
+    status=models.CharField(_('status'),max_length=255,blank=True,null=True)
     class Meta:
         ordering = ["-id"]

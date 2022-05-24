@@ -19,6 +19,7 @@ class Transaction(models.Model):
     artist_id=models.CharField(_('artist_id'),max_length=255,blank=True,null=True)
     design_id =models.CharField(_('design_id'),max_length=255,blank=True,null=True)
     image=models.CharField(_('image'),max_length=255,blank=True,null=True)
+    price = models.DecimalField(_('price'),max_digits=20, decimal_places=2,default=0.0)
     status=models.CharField(_('status'),max_length=255,blank=True,null=True)
     transaction_date=models.DateTimeField(_('transaction_date'), default=timezone.now)
     class Meta:

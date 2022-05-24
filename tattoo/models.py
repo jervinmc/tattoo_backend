@@ -18,6 +18,8 @@ class Tattoo(models.Model):
     tattoo_name=models.CharField(_('tattoo_name'),max_length=255,blank=True,null=True)
     price = models.DecimalField(_('price'),max_digits=20, decimal_places=2,default=0.0)
     user_id=models.CharField(_('user_id'),max_length=255,blank=True,null=True)
+    status=models.CharField(_('status'),max_length=255,blank=True,null=True)
+    time_estimation=models.CharField(_('time_estimation'),max_length=255,blank=True,null=True)
     image = models.ImageField(
         _('image'), upload_to=nameFile, default="uploads/Cases.png")
     class Meta:

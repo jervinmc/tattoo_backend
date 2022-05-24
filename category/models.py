@@ -15,5 +15,7 @@ def nameFile(instance, filename):
 
 class Category(models.Model):
     category_name=models.CharField(_('category_name'),max_length=255,blank=True,null=True)
+    image = models.ImageField(
+        _('image'), upload_to=nameFile, default="uploads/Cases.png")
     class Meta:
         ordering = ["-id"]
