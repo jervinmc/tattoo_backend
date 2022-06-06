@@ -27,6 +27,15 @@ class TattooUserID(generics.GenericAPIView):
             print(e)
             return Response(status=status.HTTP_404_NOT_FOUND,data=[])
 
+class CategoryDesign(generics.GenericAPIView):
+    def get(self,request,format=None,category_name=None):
+        try:
+            items = Tattoo.objects.filter(category=category_name)
+            items = TattooSerializer(items,many=True)
+            return Response(data=items.data)
+        except Exception as e:
+            print(e)
+            return Response(status=status.HTTP_404_NOT_FOUND,data=[])
 
 class TattooMarket(generics.GenericAPIView):
     def get(self,request,format=None,user_id=None):

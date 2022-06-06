@@ -16,6 +16,10 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
+from decouple import config
+import django.core.management.commands.runserver as runserver
+
+runserver.Command.default_port = config('WebServer_Port', default = "8088")
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
@@ -49,7 +53,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'tattoo',
     'category',
-    'transaction'
+    'transaction',
+    'design'
 ]
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
